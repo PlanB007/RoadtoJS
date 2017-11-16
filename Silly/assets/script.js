@@ -25,28 +25,48 @@ var insertZ = [
 
 randomize.addEventListener('click', result);
 
+console.log(insertX);
+console.log(insertY);
+console.log(insertZ);
+
 function result() {
   
+/*
   if(customName.value != '') {
     var name = customName.value;
     newStory.replace("Bob", name);
     
   }
+*/
 
+/*
   if(document.getElementById("uk").checked) {
     var weight = Math.round(300);
     var temperature =  Math.round(94);
     
   }
+*/
 
-  story.textContent = newStory ;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 
   var newStory = storyText;
   var xItem = randomValueFromArray(insertX);
   var yItem = randomValueFromArray(insertY);
   var zItem = randomValueFromArray(insertZ);
+  	console.log('newStory', storyText);
+/*
+	console.log('xItem', xItem);
+	console.log('yItem', yItem);
+	console.log('zItem', zItem);
+*/
+  var fillX = newStory.replace(":insertx:", xItem)/* , newStory.replace(":inserty:", yItem), newStory.replace(":insertz:", zItem) */;
+  var fillY = fillX.replace(":inserty:", yItem);
+  var fillZ = fillY.replace(":insertz:", zItem);
   
-  var filled = newStory.replace(":insertX:", xItem), newStory.replace(":inserty:", yItem), newStory.replace(":insertz:", zItem);
+  console.log('filled', fillZ);
+
+story.appendChild(fillZ);
+  
 
 }
