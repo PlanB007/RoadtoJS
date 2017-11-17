@@ -25,48 +25,35 @@ var insertZ = [
 
 randomize.addEventListener('click', result);
 
-console.log(insertX);
-console.log(insertY);
-console.log(insertZ);
-
 function result() {
   
-/*
   if(customName.value != '') {
     var name = customName.value;
-    newStory.replace("Bob", name);
-    
   }
-*/
+  
+  var withName = storyText.replace("Bob", name);
 
 /*
+	Dunno the formulea 
+	
   if(document.getElementById("uk").checked) {
     var weight = Math.round(300);
     var temperature =  Math.round(94);
-    
   }
+  
 */
 
-  story.textContent = newStory;
-  story.style.visibility = 'visible';
-
-  var newStory = storyText;
+  var newStory = withName;
   var xItem = randomValueFromArray(insertX);
   var yItem = randomValueFromArray(insertY);
   var zItem = randomValueFromArray(insertZ);
-  	console.log('newStory', storyText);
-/*
-	console.log('xItem', xItem);
-	console.log('yItem', yItem);
-	console.log('zItem', zItem);
-*/
-  var fillX = newStory.replace(":insertx:", xItem)/* , newStory.replace(":inserty:", yItem), newStory.replace(":insertz:", zItem) */;
+  	
+  var fillX = withName.replace(":insertx:", xItem);
   var fillY = fillX.replace(":inserty:", yItem);
   var fillZ = fillY.replace(":insertz:", zItem);
+  var finalText = fillZ.replace(":insertx:", xItem);
   
-  console.log('filled', fillZ);
-
-story.appendChild(fillZ);
-  
+  story.textContent = finalText;
+  story.style.visibility = 'visible';  
 
 }
