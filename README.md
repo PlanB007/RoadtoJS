@@ -1,5 +1,7 @@
 # RoadtoJS
-JavaScript starting from the bottom
+>JavaScript starting from the bottom, learning from MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript/
 
-
-https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code 
+## Chapters:
+- [x] Javascripts first steps
+- [x] Javascript building blocks
+- [] Introducing Javascript objects
