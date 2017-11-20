@@ -4,4 +4,4 @@
 ## Chapters:
 - [x] Javascripts first steps
 - [x] Javascript building blocks
-- [] Introducing Javascript objects
+- [ ] Introducing Javascript objects
