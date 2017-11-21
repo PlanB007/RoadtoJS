@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript class example</title>
+  </head>
+
+  <body>
+    <div>
+      <p> Try this in the console of the browser: </p>
+      <ul>
+	      <li>person1.bio()</li>
+	      <li>person2.bio()</li>
+	      <li>person3.bio()</li>
+      </ul>
+    </div>
+
+    <p></p>
+  </body>
+
+    <script>
+      var input = document.querySelector('input');
+      var btn = document.querySelector('button');
+      var para = document.querySelector('p');
+      
+      var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+      var person2 = new Person('Sarah', 'Smith', 31, 'female', ['music', 'reading']);
+      var person3 = new Person('Milan', 'Smith', 21, 'genderneutral', ['murdering', 'reading']);
+      
+      btn.onclick = function() {
+        var code = input.value;
+        para.textContent = eval(code);
+      }
+      function Person(first, last, age, gender, interests) {
+        this.name = {
+          first,
+          last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+//         Custom solution
+        if(gender === 'female') {
+	        var prenouced = 'She';
+        } else if (gender != 'male' || gender != 'female') {
+	        var prenouced = 'it';
+        } else {
+	        var prenouced = 'He';
+        };
+        
+        this.bio = function() {
+          alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ' + prenouced + ' likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        };
+        this.greeting = function() {
+          alert('Hi! I\'m ' + this.name.first + '.');
+        };
+      };
+
+	  try this in the console of your browser
+
+    </script>
+</html>
